@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ApisParcial4.Models.Horario>
+
+@{
+    ViewBag.Title = "Lista de horarios";
+}
+
+<h2>Lista de horarios</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdHorario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HorarioApertura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HorarioCierre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdClinicaAsignada)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdHorario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HorarioApertura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HorarioCierre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdClinicaAsignada)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IdHorario }) |
+            @*@Html.ActionLink("Details", "Details", new { id = item.IdHorario }) |*@
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdHorario })
+        </td>
+    </tr>
+}
+
+</table>

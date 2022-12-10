@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ApisParcial4.Models.Paciente>
+
+@{
+    ViewBag.Title = "Lista de Pacientes";
+}
+
+<h2>Lista de Pacientes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdPaciente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombrePaciente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoPaciente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pass)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdPaciente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombrePaciente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidoPaciente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pass)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IdPaciente }) |
+            @*@Html.ActionLink("Details", "Details", new { id = item.IdPaciente }) |*@
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdPaciente })
+        </td>
+    </tr>
+}
+
+</table>

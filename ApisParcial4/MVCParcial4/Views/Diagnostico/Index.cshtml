@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ApisParcial4.Models.Diagnostico>
+
+@{
+    ViewBag.Title = "Lista de Diagnosticos";
+}
+
+<h2>Lista de Diagnosticos</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdDiagnostico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreDiagnostico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdPaciente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdDiagnostico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreDiagnostico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdPaciente)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IdDiagnostico }) |
+            @*@Html.ActionLink("Details", "Details", new { id = item.IdDiagnostico }) |*@
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdDiagnostico })
+        </td>
+    </tr>
+}
+
+</table>
